@@ -10,7 +10,7 @@
     <h1>Sleeptime App</h1>
     <p>I want to fall asleep at...</p>
     
-    <select>
+    <select id="hh">
       <option>hh</option>
       <option>1</option>
       <option>2</option>
@@ -26,7 +26,7 @@
       <option>12</option>
     </select>
 
-    <select>
+    <select id="mm">
       <option>mm</option>
       <option>00</option>
       <option>05</option>
@@ -42,7 +42,7 @@
       <option>55</option>
     </select>
 
-    <select>
+    <select id="ampm">
       <option>PM</option>
       <option>AM</option>
     </select>
@@ -52,11 +52,7 @@
 
     <button onclick="handleOnClick();">CALCULATE</button>
     <div class="output">
-      <p>It takes the average human 14 minutes to fall sleep.</p>
-      <p>
-        If you head to bed right now, you should try to wake up at one of the
-        following times:
-      </p>
+      <p>You should try to wake up at one of the following times:</p>
       <p id="hours">
         12:15 AM<br />
         1:45 AM<br />
