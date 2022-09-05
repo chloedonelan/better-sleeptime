@@ -1,11 +1,18 @@
 const colors = [
-  "white", 
-  "red",
-  "white", 
-  "red",
-  "white", 
-  "red",
+  "rgb(168, 39, 254)",
+  "rgb(154, 3, 254)",
+  "rgb(150, 105, 254)",
+  "rgb(140, 140, 255)",
+  "rgb(187, 187, 255)",
+  "rgb(143, 254, 221)",
 ]
+
+function createWakeUpTimeElement(time, cycle) {
+  let elm = document.createElement("div");
+  elm.innerText = time;
+  elm.style.color = colors[cycle];
+  return elm;
+}
 
 function handleOnClick() {
     let output = document.querySelector(".output");
@@ -15,15 +22,16 @@ function handleOnClick() {
     hours.innerHTML = "";
   
     let now = new Date();
-    // allow 14 minutes to fall sleep!
+    // allow 14 minutes to fall asleep!
     now.setMinutes(now.getMinutes() + 14);
   
     // calculate sleep cycles!
     for (let i = 1; i <= 6; i++) {
       now.setMinutes(now.getMinutes() + 90);
-      let elm = document.createElement("div");
-      elm.innerText = now.toLocaleTimeString("en-US", { timeStyle: "short" });
-      elm.style.color = colors[i];
+      const elm = createWakeUpTimeElement(
+        now.toLocaleTimeString("en-US", {timeStyle: "short"}),
+        i
+      )
       hours.appendChild(elm);
-    } 
+    }
   }
